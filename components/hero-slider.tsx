@@ -143,8 +143,8 @@ export default function HeroSlider() {
 
         {/* CTA Button */}
         <a
-          href="tel:+13614160408"
-          className="px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-lg transition"
+          href="#contact-form"
+          className="glow-button px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white font-semibold rounded-lg transition relative z-10"
         >
           Get Your Free Quote
         </a>
