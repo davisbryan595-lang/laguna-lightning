@@ -5,15 +5,15 @@ import { useEffect, useRef, useState } from "react"
 import { X } from "lucide-react"
 
 const GALLERY_IMAGES = [
-  { id: 1, image: "/house-landscape-lighting.jpg", title: "Landscape Lighting" },
-  { id: 2, image: "/home-blue-rgb-lights.jpg", title: "RGB Blue Accent" },
-  { id: 3, image: "/garage-neon-pink-lights.jpg", title: "Neon Garage Accent" },
-  { id: 4, image: "/house-colorful-led-lights.jpg", title: "Colorful LED Package" },
-  { id: 5, image: "/home-ambient-lighting-night.jpg", title: "Ambient Outdoor Lighting" },
-  { id: 6, image: "/beautiful-holiday-lights-house-entrance.jpg", title: "Holiday Entrance" },
-  { id: 7, image: "/colorful-rgb-lights-roofline-night.jpg", title: "Roofline RGB" },
-  { id: 8, image: "/modern-blue-white-led-lights.jpg", title: "Modern Blue & White" },
-  { id: 9, image: "/house-decorated-holiday-lights.jpg", title: "Holiday Decoration" },
+  { id: 1, image: "/house-landscape-lighting.jpg", title: "Landscape Lighting", description: "Beautiful landscape lighting that enhances the natural beauty of your home's exterior and creates an inviting ambiance for evening gatherings." },
+  { id: 2, image: "/home-blue-rgb-lights.jpg", title: "RGB Blue Accent", description: "Modern RGB lighting system with vibrant blue accents that adds a contemporary touch to your home's facade and outdoor spaces." },
+  { id: 3, image: "/garage-neon-pink-lights.jpg", title: "Neon Garage Accent", description: "Eye-catching neon pink lighting installation perfect for creating a distinctive look around your garage and driveway area." },
+  { id: 4, image: "/house-colorful-led-lights.jpg", title: "Colorful LED Package", description: "Full-spectrum LED lighting package that transforms your home with dynamic colors and customizable lighting effects throughout the year." },
+  { id: 5, image: "/home-ambient-lighting-night.jpg", title: "Ambient Outdoor Lighting", description: "Soft ambient lighting that creates a warm, welcoming atmosphere around your home while enhancing security and visibility." },
+  { id: 6, image: "/beautiful-holiday-lights-house-entrance.jpg", title: "Holiday Entrance", description: "Professional holiday lighting installation that creates a stunning festive display around your home's entrance and entryway." },
+  { id: 7, image: "/colorful-rgb-lights-roofline-night.jpg", title: "Roofline RGB", description: "Dramatic RGB lighting installation along your roofline that creates a striking visual impact and enhances your home's nighttime appearance." },
+  { id: 8, image: "/modern-blue-white-led-lights.jpg", title: "Modern Blue & White", description: "Sophisticated blue and white LED lighting combination that provides a sleek, modern aesthetic to your outdoor living spaces." },
+  { id: 9, image: "/house-decorated-holiday-lights.jpg", title: "Holiday Decoration", description: "Complete holiday lighting decoration package featuring custom designs and professional installation for maximum visual impact." },
 ]
 
 export default function GalleryCarousel() {
