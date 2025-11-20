@@ -86,7 +86,7 @@ export default function Navigation() {
               Reviews
             </a>
             <a
-              href="tel:+13614160408"
+              href="#contact-form"
               className="glow-button block px-4 py-2 bg-orange-600 hover:bg-orange-700 rounded font-semibold text-white relative z-10 w-fit"
             >
               Get a Free Quote
