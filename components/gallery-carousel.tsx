@@ -17,6 +17,7 @@ const GALLERY_IMAGES = [
 ]
 
 export default function GalleryCarousel() {
+  const [selectedImage, setSelectedImage] = useState<typeof GALLERY_IMAGES[0] | null>(null)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const scrollContainer2Ref = useRef<HTMLDivElement>(null)
 
@@ -26,34 +27,37 @@ export default function GalleryCarousel() {
     if (!scrollContainer || !scrollContainer2) return
 
     let animationFrameId: number
+    let isRunning = true
     const scrollSpeed = 1
 
     const scroll = () => {
-      if (!scrollContainer || !scrollContainer2) return
+      if (!isRunning || !scrollContainer || !scrollContainer2) return
 
       scrollContainer.scrollLeft += scrollSpeed
       scrollContainer2.scrollLeft -= scrollSpeed
 
       const maxScroll1 = scrollContainer.scrollWidth - scrollContainer.clientWidth
+      const minScroll2 = 0
       const maxScroll2 = scrollContainer2.scrollWidth - scrollContainer2.clientWidth
 
       if (scrollContainer.scrollLeft >= maxScroll1) {
         scrollContainer.scrollLeft = 0
       }
-      if (scrollContainer2.scrollLeft <= 0) {
+      if (scrollContainer2.scrollLeft <= minScroll2) {
         scrollContainer2.scrollLeft = maxScroll2
       }
 
       animationFrameId = requestAnimationFrame(scroll)
     }
 
-    const timer = setTimeout(() => {
+    const startTimer = setTimeout(() => {
       animationFrameId = requestAnimationFrame(scroll)
-    }, 500)
+    }, 100)
 
     return () => {
-      clearTimeout(timer)
+      clearTimeout(startTimer)
       cancelAnimationFrame(animationFrameId)
+      isRunning = false
     }
   }, [])
 
