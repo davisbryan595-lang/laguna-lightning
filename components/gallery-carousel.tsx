@@ -54,21 +54,25 @@ export default function GalleryCarousel() {
         <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-12">Our Latest Projects</h2>
 
         {/* First row - scrolling right */}
-        <div className="mb-6 overflow-hidden">
-          <div ref={scrollContainerRef} className="flex gap-4 scroll-smooth" style={{ scrollBehavior: "auto" }}>
+        <div className="mb-6 overflow-hidden rounded-lg">
+          <div
+            ref={scrollContainerRef}
+            className="flex gap-4"
+            style={{ scrollBehavior: "auto", scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
             {doubledImages.map((item, index) => (
               <div
                 key={`row1-${index}`}
-                className="flex-shrink-0 w-80 h-48 relative rounded-xl overflow-hidden group cursor-pointer"
+                className="flex-shrink-0 w-80 h-48 relative rounded-xl overflow-hidden group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
                 <Image
                   src={item.image || "/placeholder.svg"}
                   alt={item.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition duration-500"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition flex items-end p-4">
-                  <h3 className="text-white font-semibold opacity-0 group-hover:opacity-100 transition">
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors duration-300 flex items-end p-4">
+                  <h3 className="text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {item.title}
                   </h3>
                 </div>
@@ -78,21 +82,25 @@ export default function GalleryCarousel() {
         </div>
 
         {/* Second row - scrolling left */}
-        <div className="overflow-hidden">
-          <div ref={scrollContainer2Ref} className="flex gap-4 scroll-smooth" style={{ scrollBehavior: "auto" }}>
+        <div className="overflow-hidden rounded-lg">
+          <div
+            ref={scrollContainer2Ref}
+            className="flex gap-4"
+            style={{ scrollBehavior: "auto", scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
             {doubledImages.map((item, index) => (
               <div
                 key={`row2-${index}`}
-                className="flex-shrink-0 w-80 h-48 relative rounded-xl overflow-hidden group cursor-pointer"
+                className="flex-shrink-0 w-80 h-48 relative rounded-xl overflow-hidden group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300"
               >
                 <Image
                   src={item.image || "/placeholder.svg"}
                   alt={item.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition duration-500"
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/50 transition flex items-end p-4">
-                  <h3 className="text-white font-semibold opacity-0 group-hover:opacity-100 transition">
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors duration-300 flex items-end p-4">
+                  <h3 className="text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {item.title}
                   </h3>
                 </div>
