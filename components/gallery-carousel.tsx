@@ -102,8 +102,8 @@ export default function GalleryCarousel() {
           <div className="overflow-hidden rounded-lg">
             <div
               ref={scrollContainer2Ref}
-              className="flex gap-4"
-              style={{ scrollBehavior: "auto", scrollbarWidth: "none", msOverflowStyle: "none" }}
+              className="flex gap-4 gallery-scroll-container"
+              style={{ scrollBehavior: "auto" }}
             >
               {doubledImages.map((item, index) => (
                 <div
