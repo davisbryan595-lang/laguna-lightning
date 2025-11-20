@@ -3,7 +3,7 @@
 import Navigation from "@/components/navigation"
 import HeroSlider from "@/components/hero-slider"
 import BeforeAfterSlider from "@/components/before-after-slider"
-import GalleryGrid from "@/components/gallery-grid"
+import GalleryCarousel from "@/components/gallery-carousel"
 import CTASection from "@/components/cta-section"
 import FloatingCTA from "@/components/floating-cta"
 
@@ -13,7 +13,7 @@ export default function Home() {
       <Navigation />
       <HeroSlider />
       <BeforeAfterSlider />
-      <GalleryGrid />
+      <GalleryCarousel />
       <CTASection />
       <FloatingCTA />
     </main>
