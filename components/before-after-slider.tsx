@@ -82,7 +82,7 @@ export default function BeforeAfterSlider() {
               {/* Navigation arrows */}
               <button
                 onClick={handlePrev}
-                className="glow-button absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full transition relative"
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-orange-600 hover:bg-orange-700 text-white transition-all shadow-lg hover:shadow-xl"
                 aria-label="Previous"
               >
                 <ChevronLeft className="w-6 h-6" />
@@ -90,7 +90,7 @@ export default function BeforeAfterSlider() {
 
               <button
                 onClick={handleNext}
-                className="glow-button absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full transition relative"
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-orange-600 hover:bg-orange-700 text-white transition-all shadow-lg hover:shadow-xl"
                 aria-label="Next"
               >
                 <ChevronRight className="w-6 h-6" />
