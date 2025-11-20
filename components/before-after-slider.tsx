@@ -123,7 +123,7 @@ export default function BeforeAfterSlider() {
             </p>
             <a
               href="tel:+13614160408"
-              className="glow-button inline-block px-8 py-3 text-white font-semibold rounded-lg transition relative z-10"
+              className="glow-button inline-block px-8 py-3 text-white font-semibold rounded-lg transition relative z-10 bg-orange-600 hover:bg-orange-700"
             >
               Get Your Free Quote
             </a>
