@@ -238,3 +238,13 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #14b8a6;
 }
+
+/* Hide scrollbar for gallery carousel while allowing scroll */
+.gallery-scroll-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.gallery-scroll-container::-webkit-scrollbar {
+  display: none;
+}
