@@ -25,10 +25,11 @@ export default function GalleryCarousel() {
     if (!scrollContainer || !scrollContainer2) return
 
     let animationFrameId: number
+    const scrollSpeed = 0.8
 
     const scroll = () => {
-      scrollContainer.scrollLeft += 1
-      scrollContainer2.scrollLeft -= 1
+      scrollContainer.scrollLeft += scrollSpeed
+      scrollContainer2.scrollLeft -= scrollSpeed
 
       if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
         scrollContainer.scrollLeft = 0
