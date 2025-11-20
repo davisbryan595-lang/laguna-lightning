@@ -25,25 +25,35 @@ export default function GalleryCarousel() {
     if (!scrollContainer || !scrollContainer2) return
 
     let animationFrameId: number
-    const scrollSpeed = 0.8
+    const scrollSpeed = 1
 
     const scroll = () => {
+      if (!scrollContainer || !scrollContainer2) return
+
       scrollContainer.scrollLeft += scrollSpeed
       scrollContainer2.scrollLeft -= scrollSpeed
 
-      if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+      const maxScroll1 = scrollContainer.scrollWidth - scrollContainer.clientWidth
+      const maxScroll2 = scrollContainer2.scrollWidth - scrollContainer2.clientWidth
+
+      if (scrollContainer.scrollLeft >= maxScroll1) {
         scrollContainer.scrollLeft = 0
       }
       if (scrollContainer2.scrollLeft <= 0) {
-        scrollContainer2.scrollLeft = scrollContainer2.scrollWidth / 2
+        scrollContainer2.scrollLeft = maxScroll2
       }
 
       animationFrameId = requestAnimationFrame(scroll)
     }
 
-    animationFrameId = requestAnimationFrame(scroll)
+    const timer = setTimeout(() => {
+      animationFrameId = requestAnimationFrame(scroll)
+    }, 500)
 
-    return () => cancelAnimationFrame(animationFrameId)
+    return () => {
+      clearTimeout(timer)
+      cancelAnimationFrame(animationFrameId)
+    }
   }, [])
 
   const doubledImages = [...GALLERY_IMAGES, ...GALLERY_IMAGES]
