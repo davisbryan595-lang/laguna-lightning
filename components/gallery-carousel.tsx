@@ -1,7 +1,8 @@
 "use client"
 
 import Image from "next/image"
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
+import { X } from "lucide-react"
 
 const GALLERY_IMAGES = [
   { id: 1, image: "/house-landscape-lighting.jpg", title: "Landscape Lighting" },
