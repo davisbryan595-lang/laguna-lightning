@@ -82,7 +82,7 @@ export default function BeforeAfterSlider() {
               {/* Navigation arrows */}
               <button
                 onClick={handlePrev}
-                className="glow-button absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full transition relative"
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-orange-600 hover:bg-orange-700 text-white transition-all shadow-lg hover:shadow-xl"
                 aria-label="Previous"
               >
                 <ChevronLeft className="w-6 h-6" />
@@ -90,7 +90,7 @@ export default function BeforeAfterSlider() {
 
               <button
                 onClick={handleNext}
-                className="glow-button absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full transition relative"
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-orange-600 hover:bg-orange-700 text-white transition-all shadow-lg hover:shadow-xl"
                 aria-label="Next"
               >
                 <ChevronRight className="w-6 h-6" />
@@ -122,8 +122,8 @@ export default function BeforeAfterSlider() {
               your home's beauty day and night, increasing property value and creating stunning ambiance.
             </p>
             <a
-              href="tel:+13614160408"
-              className="glow-button inline-block px-8 py-3 text-white font-semibold rounded-lg transition relative z-10"
+              href="#contact-form"
+              className="glow-button inline-block px-8 py-3 text-white font-semibold rounded-lg transition relative z-10 bg-orange-600 hover:bg-orange-700"
             >
               Get Your Free Quote
             </a>
