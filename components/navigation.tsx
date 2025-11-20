@@ -91,6 +91,12 @@ export default function Navigation() {
             >
               Get a Free Quote
             </a>
+            <a
+              href="tel:+13614160408"
+              className="glow-button block px-4 py-2 bg-orange-600 hover:bg-orange-700 rounded font-semibold text-white relative z-10 w-fit"
+            >
+              Call Now
+            </a>
           </div>
         )}
       </div>
