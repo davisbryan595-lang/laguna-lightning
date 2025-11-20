@@ -122,7 +122,7 @@ export default function BeforeAfterSlider() {
               your home's beauty day and night, increasing property value and creating stunning ambiance.
             </p>
             <a
-              href="tel:+13614160408"
+              href="#contact-form"
               className="glow-button inline-block px-8 py-3 text-white font-semibold rounded-lg transition relative z-10 bg-orange-600 hover:bg-orange-700"
             >
               Get Your Free Quote
