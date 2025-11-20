@@ -64,76 +64,112 @@ export default function GalleryCarousel() {
   const doubledImages = [...GALLERY_IMAGES, ...GALLERY_IMAGES]
 
   return (
-    <section className="w-full bg-black py-20 px-4 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-12">Our Latest Projects</h2>
+    <>
+      <section className="w-full bg-black py-20 px-4 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-12">Our Latest Projects</h2>
 
-        {/* First row - scrolling right */}
-        <div className="mb-6 overflow-hidden rounded-lg">
-          <div
-            ref={scrollContainerRef}
-            className="flex gap-4"
-            style={{ scrollBehavior: "auto", scrollbarWidth: "none", msOverflowStyle: "none" }}
-          >
-            {doubledImages.map((item, index) => (
-              <div
-                key={`row1-${index}`}
-                className="flex-shrink-0 w-80 h-48 relative rounded-xl overflow-hidden group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300"
-              >
-                <Image
-                  src={item.image || "/placeholder.svg"}
-                  alt={item.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors duration-300 flex items-end p-4">
-                  <h3 className="text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {item.title}
-                  </h3>
+          {/* First row - scrolling right */}
+          <div className="mb-6 overflow-hidden rounded-lg">
+            <div
+              ref={scrollContainerRef}
+              className="flex gap-4"
+              style={{ scrollBehavior: "auto", scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              {doubledImages.map((item, index) => (
+                <div
+                  key={`row1-${index}`}
+                  onClick={() => setSelectedImage(item)}
+                  className="flex-shrink-0 w-80 h-48 relative rounded-xl overflow-hidden group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300"
+                >
+                  <Image
+                    src={item.image || "/placeholder.svg"}
+                    alt={item.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors duration-300 flex items-end p-4">
+                    <h3 className="text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {item.title}
+                    </h3>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+          </div>
+
+          {/* Second row - scrolling left */}
+          <div className="overflow-hidden rounded-lg">
+            <div
+              ref={scrollContainer2Ref}
+              className="flex gap-4"
+              style={{ scrollBehavior: "auto", scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              {doubledImages.map((item, index) => (
+                <div
+                  key={`row2-${index}`}
+                  onClick={() => setSelectedImage(item)}
+                  className="flex-shrink-0 w-80 h-48 relative rounded-xl overflow-hidden group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300"
+                >
+                  <Image
+                    src={item.image || "/placeholder.svg"}
+                    alt={item.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors duration-300 flex items-end p-4">
+                    <h3 className="text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      {item.title}
+                    </h3>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Second row - scrolling left */}
-        <div className="overflow-hidden rounded-lg">
+      {/* Image Preview Modal */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4" onClick={() => setSelectedImage(null)}>
           <div
-            ref={scrollContainer2Ref}
-            className="flex gap-4"
-            style={{ scrollBehavior: "auto", scrollbarWidth: "none", msOverflowStyle: "none" }}
+            className="bg-slate-900 rounded-2xl max-w-4xl w-full flex flex-col md:flex-row gap-6 md:gap-8 p-6 md:p-8 max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
           >
-            {doubledImages.map((item, index) => (
-              <div
-                key={`row2-${index}`}
-                className="flex-shrink-0 w-80 h-48 relative rounded-xl overflow-hidden group cursor-pointer shadow-lg hover:shadow-xl transition-shadow duration-300"
+            {/* Close button */}
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 bg-orange-600 hover:bg-orange-700 text-white p-2 rounded-full transition-colors z-10"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
+            {/* Image */}
+            <div className="w-full md:w-2/3 relative aspect-video md:aspect-auto md:h-96">
+              <Image
+                src={selectedImage.image || "/placeholder.svg"}
+                alt={selectedImage.title}
+                fill
+                className="object-cover rounded-xl"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="w-full md:w-1/3 flex flex-col justify-center">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{selectedImage.title}</h2>
+              <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-6">
+                {selectedImage.description}
+              </p>
+              <a
+                href="tel:+13614160408"
+                className="glow-button inline-block px-6 py-3 text-white font-semibold rounded-lg transition relative z-10 bg-orange-600 hover:bg-orange-700 w-fit"
               >
-                <Image
-                  src={item.image || "/placeholder.svg"}
-                  alt={item.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors duration-300 flex items-end p-4">
-                  <h3 className="text-white font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {item.title}
-                  </h3>
-                </div>
-              </div>
-            ))}
+                Get a Quote
+              </a>
+            </div>
           </div>
         </div>
-
-        {/* View More CTA */}
-        <div className="text-center mt-12">
-          <a
-            href="tel:+13614160408"
-            className="glow-button inline-block px-8 py-3 text-white font-semibold rounded-lg transition relative z-10 bg-orange-600 hover:bg-orange-700"
-          >
-            See All Projects
-          </a>
-        </div>
-      </div>
-    </section>
+      )}
+    </>
   )
 }
