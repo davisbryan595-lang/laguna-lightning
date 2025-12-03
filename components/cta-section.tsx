@@ -3,6 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
+import { Facebook, Music } from "lucide-react"
 
 export default function CTASection() {
   const [formData, setFormData] = useState({
