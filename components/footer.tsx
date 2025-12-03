@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Mail, MapPin, Phone } from "lucide-react"
+import { Mail, MapPin, Phone, Facebook, Music } from "lucide-react"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -125,6 +125,28 @@ export default function Footer() {
                 Sitemap
               </a>
             </div>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex justify-center gap-6 mt-8">
+            <a
+              href="https://www.facebook.com/PortALightHouse/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-orange-500 transition"
+              aria-label="Facebook"
+            >
+              <Facebook className="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.tiktok.com/@lagunalighting"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-orange-500 transition"
+              aria-label="TikTok"
+            >
+              <Music className="w-5 h-5" />
+            </a>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
+import { Facebook, Music } from "lucide-react"
 
 export default function CTASection() {
   const [formData, setFormData] = useState({
@@ -83,6 +84,28 @@ export default function CTASection() {
           <a href="tel:+13614160408" className="text-2xl font-bold text-orange-500 hover:text-orange-600 transition">
             +1 (361) 416-0408
           </a>
+
+          {/* Social Links */}
+          <div className="flex justify-center gap-6 mt-8">
+            <a
+              href="https://www.facebook.com/PortALightHouse/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-orange-500 transition"
+              aria-label="Facebook"
+            >
+              <Facebook className="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.tiktok.com/@lagunalighting"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-orange-500 transition"
+              aria-label="TikTok"
+            >
+              <Music className="w-5 h-5" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
