@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { Mail, MapPin, Phone } from "lucide-react"
+import { Mail, MapPin, Phone, Facebook, Music } from "lucide-react"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
